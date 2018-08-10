@@ -6,11 +6,11 @@
 
 We want to create a simple two "page" web application to display train services. Our UX designer has created some mockups:
 
-    On the first page there is a list of all departing services, like this:
+On the first page there is a list of all departing services, like this:
 
 <a href="https://imgbb.com/"><img src="https://image.ibb.co/jOY9o9/Farringdon_to_West_Hampstead_Thameslink_Services.png" alt="Farringdon_to_West_Hampstead_Thameslink_Services" border="0"></a>
 
-    When user clicks/taps on a service, calling points are displayed:
+When user clicks/taps on a service, calling points are displayed:
     
 <a href="https://ibb.co/j0h8gU"><img src="https://image.ibb.co/c328gU/Farringdon_to_West_Hampstead_Thameslink_Live_Departures_Arrivals.png" alt="Farringdon_to_West_Hampstead_Thameslink_Live_Departures_Arrivals" border="0"></a>
 
