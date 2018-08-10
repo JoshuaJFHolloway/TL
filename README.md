@@ -64,7 +64,7 @@ supplied. This allowed me to understand how the react project would be structure
 It is clear that there is a lot of repetition in the UX design mock ups. The same component will be repeatedly
 rendered but with different props being passed to it. My first thought is that I would create a component to
 act as the tab you click on in the first image (10:59 Bedford, plat 4 etc). Loop over that component and feed it
-data from the api call. Then inside of that component will be the individual list of stops. Each stop will be a
+data from the JSON files. Then inside of that component will be the individual list of stops. Each stop will be a
 component itself and depending upon props it receives it will be either active or not. When 'active' it will
 render the component in normal weighted font and inactive will be greyed. The first and last components receiving an image of the
 circle filled in black. There are other things to bear in mind, such as the departing and arriving stations being
@@ -73,10 +73,10 @@ in bold.
 It came apparent to me that there are different ways to bring this create this application. At this planning stage,
 creating a table of components for the list makes most sense. Once again using a loop which will loop through creating
 each individual train stop component until the loop reaches its limiter (this would be set by the number of stops said
-route has. This will be pulled down from the api call into the loop). Hence, provisionally, these will be the
+route has. This will be pulled down from the JSON files into the loop). Hence, provisionally, these will be the
 components I will create:
 
-- departingServices.js (wrapper) - Api call made here.
+- departingServices.js (wrapper) - JSON files pulled in here.
 - trainTile.js (one of the individual tiles that the wrapper will hold)
 - serviceWrapper.js (holds the calling points)
 - serviceHeader.js (Farringdon to West Hempstead part at the top of the calling points)
