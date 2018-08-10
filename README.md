@@ -1,7 +1,5 @@
 # Trainline
 
-**My task was to build a two page web application for Trainline**
-
 **Task specifications**
 
 We want to create a simple two "page" web application to display train services. Our UX designer has created some mockups:
@@ -78,11 +76,11 @@ each individual train stop component until the loop reaches its limiter (this wo
 route has. This will be pulled down from the api call into the loop). Hence, provisionally, these will be the
 components I will create:
 
-departingServices.js (wrapper) - Api call made here.
-trainTile.js (one of the individual tiles that the wrapper will hold)
-serviceWrapper.js (holds the calling points)
-serviceHeader.js (Farringdon to West Hempstead part at the top of the calling points)
-callingPoint.js (one of the individual calling point tiles that the wrapper holds)
+- departingServices.js (wrapper) - Api call made here.
+- trainTile.js (one of the individual tiles that the wrapper will hold)
+- serviceWrapper.js (holds the calling points)
+- serviceHeader.js (Farringdon to West Hempstead part at the top of the calling points)
+- callingPoint.js (one of the individual calling point tiles that the wrapper holds) 
 
 I understand that it is preferable to use CSS only and not images. I will look to create the
 project using images at first and then trade them out for pure CSS solutions if I have the time.
