@@ -1,9 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from '../../components/App';
+import {shallow} from 'enzyme';
+import departingTrains from '../../data/departingTrains';
+import toBSK from '../../data/toBSK';
+import toSHP from '../../data/toSHP';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+let app;
+
+const state = {
+    departingTrains: departingTrains,
+    toBSK: toBSK,
+    toSHP: toSHP
+};
+
+describe('App', () => {
+
+    app = shallow(<App/>);
+
+    beforeEach(() => {
+        app = shallow(<App/>);
+    });
+
+    it('renders correctly', () => {
+        expect(app).toMatchSnapshot();
+    });
+
+    describe('Initializes state', () => {
+        it('initializes state correctly', () => {
+            expect(app.state()).toEqual(state);
+        });
+    });
 });
