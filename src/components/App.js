@@ -3,12 +3,8 @@ import {
     BrowserRouter as Router,
     Route, Switch,
 } from 'react-router-dom'
-import departingServices from './departingServices';
-import trainTab from './trainTab';
-
-// import departingTrains from '../data/departingTrains';
-// import toBSK from '../data/toBSK';
-// import toSHP from '../data/toSHP';
+import DepartingServices from './DepartingServices';
+import CallingPoints from './CallingPoints';
 
 const App = () => {
 
@@ -16,12 +12,8 @@ const App = () => {
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/" component={departingServices}/>
-                    <Route path="/:" component={trainTab}/>
-                    {/*departingTrains={this.state.departingTrains}*/}
-                    {/*toBSK={this.state.toBSK}*/}
-                    {/*toSHP={this.state.toSHP}*/}
-                    {/*/>*/}
+                    <Route exact path="/" component={DepartingServices}/>
+                    <Route path="/:destination" component={CallingPoints}/>
                 </Switch>
             </div>
         </Router>
