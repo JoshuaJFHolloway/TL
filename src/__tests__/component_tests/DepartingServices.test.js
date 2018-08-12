@@ -1,5 +1,5 @@
 import React from 'react';
-import DepartingServices from '../../components/departingServices';
+import DepartingServices from '../../components/DepartingServices';
 import {shallow} from 'enzyme';
 
 const state = {
@@ -121,4 +121,13 @@ describe('departingServices', () => {
             expect(departingServices.instance().extractArrivalTime(elevenPastFive)).toEqual('17:11')
         });
     });
+
+    describe('addPlatformString', () => {
+        it("takes a string and adds 'Plat.' to the beginning of a string", () => {
+            const string = "14";
+            const platformString = "Plat.14";
+
+            expect(departingServices.instance().addPlatformString(string)).toEqual(platformString)
+        })
+    })
 });
