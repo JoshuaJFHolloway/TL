@@ -25,7 +25,7 @@ ShallowWrapper {
                 />
                 <Route
                         component={[Function]}
-                        path="/:"
+                        path="/destination"
                 />
         </Switch>
 </div>,
@@ -44,7 +44,7 @@ ShallowWrapper {
           />
           <Route
                     component={[Function]}
-                    path="/:"
+                    path="/destination"
           />
 </Switch>,
       },
@@ -62,7 +62,7 @@ ShallowWrapper {
 />,
             <Route
               component={[Function]}
-              path="/:"
+              path="/destination"
 />,
           ],
         },
@@ -87,7 +87,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "path": "/:",
+              "path": "/destination",
             },
             "ref": null,
             "rendered": null,
@@ -115,7 +115,7 @@ ShallowWrapper {
                     />
                     <Route
                               component={[Function]}
-                              path="/:"
+                              path="/destination"
                     />
           </Switch>
 </div>,
@@ -134,7 +134,7 @@ ShallowWrapper {
             />
             <Route
                         component={[Function]}
-                        path="/:"
+                        path="/destination"
             />
 </Switch>,
         },
@@ -152,7 +152,7 @@ ShallowWrapper {
 />,
               <Route
                 component={[Function]}
-                path="/:"
+                path="/destination"
 />,
             ],
           },
@@ -177,7 +177,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "path": "/:",
+                "path": "/destination",
               },
               "ref": null,
               "rendered": null,

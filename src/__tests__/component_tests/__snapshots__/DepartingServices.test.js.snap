@@ -3,7 +3,7 @@
 exports[`departingServices renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <departingServices />,
+  Symbol(enzyme.__unrendered__): <DepartingServices />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -16,9 +16,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1>
-        Hello
-</h1>,
+      "children": <table>
+        <tbody>
+                
+        </tbody>
+</table>,
     },
     "ref": null,
     "rendered": Object {
@@ -26,11 +28,23 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Hello",
+        "children": <tbody>
+          
+</tbody>,
       },
       "ref": null,
-      "rendered": "Hello",
-      "type": "h1",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [],
+        },
+        "ref": null,
+        "rendered": Array [],
+        "type": "tbody",
+      },
+      "type": "table",
     },
     "type": "div",
   },
@@ -40,9 +54,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h1>
-          Hello
-</h1>,
+        "children": <table>
+          <tbody>
+                    
+          </tbody>
+</table>,
       },
       "ref": null,
       "rendered": Object {
@@ -50,11 +66,23 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Hello",
+          "children": <tbody>
+            
+</tbody>,
         },
         "ref": null,
-        "rendered": "Hello",
-        "type": "h1",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [],
+          },
+          "ref": null,
+          "rendered": Array [],
+          "type": "tbody",
+        },
+        "type": "table",
       },
       "type": "div",
     },
