@@ -91,6 +91,8 @@ project using images at first and then trade them out for pure CSS solutions if 
 
 ## Things I am not happy with
 
+- Not having tested the life cycle method componentDidMount in departingServices.
+
 // discuss what you would like to improve about the current codebase
 
 ## Trade offs
