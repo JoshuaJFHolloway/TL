@@ -58,11 +58,6 @@ class DepartingServices extends Component {
         return `Plat.${service}`
     }
 
-
-    onClick = () => {
-
-    };
-
     render() {
 
         let departingServices = [];
@@ -90,8 +85,6 @@ class DepartingServices extends Component {
                 <table>
                     <tbody>
                         {departingServices}
-                        {/*if the station === BSK or SHP then pass down those props*/}
-                        {/*toBSK={this.state.toBSK} toSHP={this.state.toSHP}*/}
                     </tbody>
                 </table>
             </div>
