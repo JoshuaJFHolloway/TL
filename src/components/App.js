@@ -1,25 +1,31 @@
-import React, { Component } from 'react';
-import departingTrains from '../data/departingTrains';
-import toBSK from '../data/toBSK';
-import toSHP from '../data/toSHP';
+import React from 'react';
+import {
+    BrowserRouter as Router,
+    Route, Switch,
+} from 'react-router-dom'
+import departingServices from './departingServices';
+import trainTab from './trainTab';
 
-class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            departingTrains: departingTrains,
-            toBSK: toBSK,
-            toSHP: toSHP
-        }
-    }
+// import departingTrains from '../data/departingTrains';
+// import toBSK from '../data/toBSK';
+// import toSHP from '../data/toSHP';
 
+const App = () => {
 
-    render() {
-        return (
+    return (
+        <Router>
             <div>
+                <Switch>
+                    <Route exact path="/" component={departingServices}/>
+                    <Route path="/:" component={trainTab}/>
+                    {/*departingTrains={this.state.departingTrains}*/}
+                    {/*toBSK={this.state.toBSK}*/}
+                    {/*toSHP={this.state.toSHP}*/}
+                    {/*/>*/}
+                </Switch>
             </div>
-        );
-    }
-}
+        </Router>
+    );
+};
 
 export default App;
