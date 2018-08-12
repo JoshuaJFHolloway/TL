@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import trainTab from './trainTab';
+import TrainTab from './TrainTab';
 
 let destinations = [];
 let scheduledArrivalTime = [];
@@ -7,7 +7,7 @@ let trainCompany = [];
 let platform = [];
 let actualArrivalTime = [];
 
-class departingServices extends Component {
+class DepartingServices extends Component {
     constructor() {
         super();
         this.state = {
@@ -26,7 +26,7 @@ class departingServices extends Component {
                 data.services.map((service) => {
                     destinations.push(service.destinationList[0].crs);
                     scheduledArrivalTime.push(this.extractArrivalTime(service.scheduledInfo.scheduledTime));
-                    platform.push(this.scheduledOrRealTimePlatform(service));
+                    platform.push(this.addPlatformString(this.scheduledOrRealTimePlatform(service)));
                     trainCompany.push(service.serviceOperator);
                     actualArrivalTime.push(this.onTimeOrExpected(service));
                 });
@@ -43,15 +43,19 @@ class departingServices extends Component {
         else{return "TBC"}
     }
 
-    onTimeOrExpected(service){
+    onTimeOrExpected(service) {
         const scheduledTime = this.extractArrivalTime(service.scheduledInfo.scheduledTime);
         const actualTime = this.extractArrivalTime(service.realTimeUpdatesInfo.realTimeServiceInfo.realTime);
 
         return scheduledTime === actualTime ? "On time" : `exp.${actualTime}`
     }
 
-    extractArrivalTime(service){
+    extractArrivalTime(service) {
         return service.slice(11, -9);
+    }
+
+    addPlatformString(service) {
+        return `Plat.${service}`
     }
 
 
@@ -61,17 +65,38 @@ class departingServices extends Component {
 
     render() {
 
+        let departingServices = [];
+        const state = this.state;
+
+        for (let i = 0; i < this.state.destinations.length; i++) {
+            departingServices.push(
+                <tr>
+                    <td>
+                        <TrainTab
+                            destination={state.destinations[i]}
+                            scheduledArrivalTime={state.scheduledArrivalTime[i]}
+                            trainCompany={state.trainCompany[i]}
+                            platform={state.platform[i]}
+                            actualArrivalTime={state.actualArrivalTime[i]}
+                        />
+                    </td>
+                </tr>
+            )
+        }
+
+
         return (
             <div>
-                <tr>
-                    <h1>Hello</h1>
-                    {/*if the station === BSK or SHP then pass down those props*/}
-                    {/*toBSK={this.state.toBSK} toSHP={this.state.toSHP}*/}
-                    {/*<trainTab/>*/}
-                </tr>
+                <table>
+                    <tbody>
+                        {departingServices}
+                        {/*if the station === BSK or SHP then pass down those props*/}
+                        {/*toBSK={this.state.toBSK} toSHP={this.state.toSHP}*/}
+                    </tbody>
+                </table>
             </div>
         );
     }
 }
 
-export default departingServices;
+export default DepartingServices;
