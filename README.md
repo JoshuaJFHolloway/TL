@@ -76,11 +76,11 @@ each individual train stop component until the loop reaches its limiter (this wo
 route has. This will be pulled down from the JSON files into the loop). Hence, provisionally, these will be the
 components I will create:
 
-- departingServices.js (wrapper) - JSON files pulled in here.
-- trainTile.js (one of the individual tiles that the wrapper will hold)
-- serviceWrapper.js (holds the calling points)
-- serviceHeader.js (Farringdon to West Hempstead part at the top of the calling points)
-- callingPoint.js (one of the individual calling point tiles that the wrapper holds) 
+- DepartingServices.js (wrapper) - JSON files pulled in here.
+- TrainTile.js (one of the individual tiles that the wrapper will hold)
+- ServiceWrapper.js (holds the calling points)
+- ServiceHeader.js (Farringdon to West Hempstead part at the top of the calling points)
+- CallingPoint.js (one of the individual calling point tiles that the wrapper holds) 
 
 I understand that it is preferable to use CSS only and not images. I will look to create the
 project using images at first and then trade them out for pure CSS solutions if I have the time.
@@ -102,6 +102,10 @@ project using images at first and then trade them out for pure CSS solutions if 
 ## Future Additions
 
 // explain how application can be improved
+
+// grey box behind for shadowed effect.
+
+// import error view for when people click on arrow to see calling points on pages that do not exist
 
 
 ## Screenshots of use!
