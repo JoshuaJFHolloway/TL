@@ -77,7 +77,7 @@ route has. This will be pulled down from the JSON files into the loop). Hence, p
 components I will create:
 
 - DepartingServices.js (wrapper) - JSON files pulled in here.
-- TrainTile.js (one of the individual tiles that the wrapper will hold)
+- TrainTab.js (one of the individual tiles that the wrapper will hold)
 - ServiceWrapper.js (holds the calling points)
 - ServiceHeader.js (Farringdon to West Hempstead part at the top of the calling points)
 - CallingPoint.js (one of the individual calling point tiles that the wrapper holds) 
@@ -87,33 +87,143 @@ project using images at first and then trade them out for pure CSS solutions if 
 
 ### Edge Cases
 
-// discuss edge cases
+There are multiple edge cases in this project that I am aware of. For example, sometimes there is not a 
+platform organised for the train to pull up at. I dealt with this by assigning it a 'TBC' tag. However,
+with these changing lengths of text in my departing services application it meant that the CSS padding I
+inserted was making things unaligned. This was the same with strings in the divs. I means that the end product
+was not uniform. The buttons aren't all in the same place.
+
+To have dealt with this I would possibly create columns within the div itself or use other CSS measurements
+like vh or rem to make things neater and more aligned.
+
 
 ## Things I am not happy with
 
-- Not having tested the life cycle method componentDidMount in departingServices.
+- Not having tested the life cycle method componentDidMount in departingServices:
 
-// discuss what you would like to improve about the current codebase
+I am aware that my setupTests.js file disables life cycle methods when testing to make things easier, but, I am
+not too experienced with how to test them directly. I know I could possibly test to make sure it is called and 
+test that it changes the state to how I expect. But the state change is huge and I don't want to create a large
+variable to compare with. I know that I don't need to test fetch and componentDidMount directly as they have
+their own internal testing. 
+
+
+- Not having completed the callingPoints component:
+
+I knew that I could have completed this part of the project had I just created the project without react router.
+I have many times before in projects created a button, given it an onClick function, updated state, and then rendered
+accordingly. And this is what I could have done with this. However, I wanted to learn react router and it also
+architecturally felt wrong to use a button. If this project was to scale, it just is not useful to have multiple
+buttons of different onClick functions. All changing the state and then passing down JSON. It feels sloppy and not scaleable.
+React router on the other hand cleans things up and allows for me to do something which I quite liked: using string interpolation 
+to import the correct JSON file depending upon the callingPoint clicked. However, ultimately, the fact that the project is not
+complete is a disappointment.
+
+- Not having tested the react router:
+
+As I have not used it before I did not know how to test it or whether my use of it in the project was correct.
+Any advice on this would be welcome.
 
 ## Trade offs
 
-// what trade offs did you make and why
+- Using a table to organise the departing services:
+
+I did this to give a more stricter layout to the page, allow me to create a trainTab component and 
+plant it nicely within a column of table data rows. However, I understand that this isnt pure CSS
+and would have taken the time to do it without a table had this exercise been focused more on the presentation
+of the code itself. I know that having a polished look was not priority.
+
+
+- React route and time:
+
+As aforementioned in the previous section, I decided to learn react router. It was both a learning opportunity
+and an architectural decision. The trade off of doing this instead of using buttons and onClick functions that just
+conditionally rendered either the BSK route or the SHP route is that I was not able to complete the assignment.
+My solution so far allows for infinitely more scalability over not using react router. It is a trade off that I
+don't regret in some ways because it is now clear to me how useful react router is to react projects.
+
+
+## What I am content with
+
+- Extract logic out:
+ 
+I did this where I could to prevent one function doing anything more than it should have. I did however 
+found myself wondering whether the componentDidMount function could have done a little less. Especially
+pertinent in the construction of the callingPoints component.
+
+
+- Using React Router:
+
+I really enjoyed using it and working it out. It felt especially useful to use it in this project and it just fit
+very well architecturally, so I am pleased I took the time to understand it.
+
+
+- CSS for the departingServices file:
+
+I know its not perfect and there are some issues with the alignment of information inside each service. But I
+like how it turned out. Its not far from looking very alike to the image supplied to us.
+
+
+- Using react lifecycle method componentDidMount:
+
+There are many ways that the state in the component could have been updated. But I felt that my use of
+this lifecycle method really synergised well with taking the JSON and updating the state in one motion.
+
 
 ## Future Additions
 
-// explain how application can be improved
+This is what I had planned to do:
 
-// grey box behind for shadowed effect.
+- Creating a state of arrays that held all useful information needed for the callingPoints page:
 
-// import error view for when people click on arrow to see calling points on pages that do not exist
+Just like in departingServices.js the state would be created from the componentDidMount function and the
+functions beneath would handle the logic required to update the state in the best format possible.
+
+To work out whether something was on Time, Departed or Expected I was taking the scheduled and actual time
+for both the departure and arrival of each stop for that train. If the actual departure === the scheduled
+departure then the function would return 'on Time". However, if they do not equal each other and hasDeparted
+=== true then it would return 'dept.actual departure time'. If they do not equal each other and 
+hasDeparted is false then it would return 'exp. real time info'.
+
+
+- The css for the callingPoints component:
+
+It would be much like the departingServices component. A table of a long column of data that would hold each
+individual time, station, expected time of arrival and circle I was going to create. When the hasDeparted JSON
+field === true I would make said trainTab greyed. This would be done the same way I made the 'on Time' string go green
+in the departingServices file. Use in line styling, if hasDeparted === false then add grey as a style to the strings,
+otherwise leave them as they are, black.
+
+
+- Making the starting and concluding stations black:
+
+I would have achieved this by setting the state originally with these two stations. Then inside the trainStopTab
+component I would once again conditionally render styling depending on whether the props passed to it to render that
+stop === the starting or concluding stations strings passed down from state. If they do then give that div a bolder
+css. Those two stations will be kept in state individually as they need to be used for the header component that sits
+on top of the list of stops.
+
+
+- Import an error view for when people click on arrows to see calling points on pages that do not exist:
+
+This would have been achieved with a simple Error.js file that would be rendered in error handling that I would
+add to the fetch of the JSON file in the callingPoints.js component. The error.js file would simply say that the
+page does not exist before providing a '<Link to="/">Return to Departing Services</Link>' line so that the user
+can return to the services page. 
+
+
+This would have been handy for all the arrows on the services page that lead to nowhere:
+
+- Add underlaying div which I would make grey for the shadowed effect on the departingServices component.
 
 
 ## Screenshots of use!
 
 Below you can see a screenshot of the application once loaded.
 
-// add screenshots that show use of application
+<a href="https://ibb.co/kpyFi9"><img src="https://preview.ibb.co/mMZo39/Screen_Shot_2018_08_13_at_01_14_32.png" alt="Screen_Shot_2018_08_13_at_01_14_32" border="0"></a>
 
+The arrows take you to the url of said departing train.
 
 ## Contributors
 
