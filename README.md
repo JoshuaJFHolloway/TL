@@ -149,7 +149,7 @@ don't regret in some ways because it is now clear to me how useful react router 
  
 I did this where I could to prevent one function doing anything more than it should have. I did however 
 found myself wondering whether the componentDidMount function could have done a little less. Especially
-pertinent in the construction of the callingPoints component.
+pertinent in the construction of the departingServices component.
 
 
 - Using React Router:
