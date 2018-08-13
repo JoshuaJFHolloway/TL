@@ -45,7 +45,7 @@ React JS, Jest, Sinon, Enzyme.
 
 ## Installation
 
-- Run 'git clone https://github.com/JoshuaJFHolloway/TL' in your terminal
+- Run 'git clone https://github.com/JoshuaJFHolloway/Trainline' in your terminal
 
 
 ## Usage
@@ -134,7 +134,7 @@ and would have taken the time to do it without a table had this exercise been fo
 of the code itself. I know that having a polished look was not priority.
 
 
-- React route and time:
+- React router and time:
 
 As aforementioned in the previous section, I decided to learn react router. It was both a learning opportunity
 and an architectural decision. The trade off of doing this instead of using buttons and onClick functions that just
@@ -223,7 +223,7 @@ Below you can see a screenshot of the application once loaded.
 
 <a href="https://ibb.co/kpyFi9"><img src="https://preview.ibb.co/mMZo39/Screen_Shot_2018_08_13_at_01_14_32.png" alt="Screen_Shot_2018_08_13_at_01_14_32" border="0"></a>
 
-The arrows take you to the url of said departing train.
+The arrows take you to the url of said departing train which would show the list of its stops.
 
 ## Contributors
 
